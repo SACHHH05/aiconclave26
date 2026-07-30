@@ -1,0 +1,23 @@
+.scroll-indicator {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+
+.scroll-indicator:hover {
+  color: var(--lime);
+}
+
+.scroll-indicator__label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.scroll-indicator__icon {
+  animation: bounce-y 2s ease-in-out infinite;
+}
