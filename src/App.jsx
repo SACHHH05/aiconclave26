@@ -6,6 +6,7 @@ import About from "./sections/About.jsx";
 import Events from "./sections/Events.jsx";
 import Schedule from "./sections/Schedule.jsx";
 import Jury from "./sections/Jury.jsx";
+import Posters from "./sections/Posters.jsx";
 import Venue from "./sections/Venue.jsx";
 
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
         <Schedule />
         <Jury />
         <Venue />
+        <Posters/>
       </main>
       <Footer />
     </>

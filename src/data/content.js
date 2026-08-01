@@ -1,9 +1,15 @@
+import ahmedPhoto from "../components/Ahmed.jpg";
+import chesemanPhoto from "../components/cheseman .jpg";
+import saadPhoto from "../components/saad.jpeg";
+import lenkaPhoto from "../components/lenka.jpg";
+
 export const NAV_ITEMS = [
   { id: "about", label: "About" },
   { id: "events", label: "Events" },
   { id: "schedule", label: "Schedule" },
   { id: "jury", label: "Jury" },
   { id: "venue", label: "Venue" },
+  { id: "posters", label: "Posters" },
 ];
 
 export const OBJECTIVES = [
@@ -57,7 +63,7 @@ export const EVENTS = [
   },
   {
     kind: "Competition",
-    dotColor: "#ff6b6b",
+    dotColor: "var(--violet)",
     title: "Startup / AI Idea Pitch",
     subtitle: "5-Min Pitch + Q&A",
     text: "Present the business viability of an AI-based idea or product before the jury panel.",
@@ -89,21 +95,40 @@ export const SCHEDULE = [
 export const JURY = [
   {
     n: "Prof. Dr. Ahmed Abdelgewad",
-    r: "Professor of Computer Engineering",
-    a: "International Academic Expert",
+    r: "Professor of Computer Engineering, Central Michigan University",
+    a: "USA · International Academic Expert",
+    flag: "🇺🇸",
     tag: "Guest Lecture · Startup Pitch Jury",
+    type: "academic",
+    photo: ahmedPhoto,
   },
   {
     n: "Prof. Ir. Dr. Fauziahanim Binti Che Seman",
-    r: "Faculty of Electrical & Electronic Engineering",
-    a: "International Academic Expert",
+    r: "Faculty of Electrical & Electronic Engineering, Universiti Tun Hussein Onn Malaysia (UTHM)",
+    a: "Malaysia · International Academic Expert",
+    flag: "🇲🇾",
     tag: "Poster Presentation Jury",
+    type: "academic",
+    photo: chesemanPhoto,
   },
   {
-    n: "Mr. Joyner Jebasten",
-    r: "Lennox Technology, Chennai",
-    a: "Industry Expert",
-    tag: "Guest Lecture · AI Project Jury",
+    n: "Prof. Dr. Saad Mechlief",
+    r: "Professor, Department of Electrical Engineering, Swinburne University",
+    a: "Australia · International Academic Expert",
+    flag: "🇦🇺",
+    tag: "International Jury Panel",
+    type: "academic",
+    photo: saadPhoto,
+  },
+  {
+    n: "Prof. Dr. Lenka Svecova",
+    r: "Dean & Professor, University of Chemistry and Technology Prague",
+    a: "Czech Republic · International Academic Expert",
+    flag: "🇨🇿",
+    tag: "International Jury Panel",
+    type: "academic",
+    photo: lenkaPhoto,
+    photoPosition: "center 20%",
   },
 ];
 
@@ -117,5 +142,5 @@ export const STATS = [
   { end: 100, suffix: "+", label: "Delegates" },
   { end: 3, suffix: "", label: "Parallel Halls" },
   { end: 4, suffix: "", label: "Flagship Events" },
-  { end: 3, suffix: "", label: "Intl. Jurors" },
+  { end: 4, suffix: "", label: "Intl. Jurors" },
 ];

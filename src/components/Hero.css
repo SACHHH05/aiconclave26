@@ -19,18 +19,24 @@
   position: absolute;
   inset: -10% -10%;
   background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    linear-gradient(to right, rgba(23, 19, 15, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(23, 19, 15, 0.06) 1px, transparent 1px);
   background-size: 64px 64px;
   mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 40%, transparent 90%);
   animation: grid-pan 26s linear infinite;
+}
+
+.hero__glow-wrap {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
 }
 
 .hero__glow {
   position: absolute;
   border-radius: 50%;
   filter: blur(90px);
-  opacity: 0.45;
+  opacity: 0.35;
   animation: drift 14s ease-in-out infinite;
 }
 
@@ -39,7 +45,7 @@
   height: 480px;
   top: -140px;
   right: -80px;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.55), transparent 70%);
+  background: radial-gradient(circle, rgba(200, 16, 46, 0.35), transparent 70%);
 }
 
 .hero__glow--2 {
@@ -47,7 +53,7 @@
   height: 420px;
   bottom: -160px;
   left: -100px;
-  background: radial-gradient(circle, rgba(34, 211, 238, 0.4), transparent 70%);
+  background: radial-gradient(circle, rgba(200, 16, 46, 0.18), transparent 70%);
   animation-delay: -7s;
 }
 
@@ -97,7 +103,7 @@
 .hero__title {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(58px, 9.5vw, 120px);
+  font-size: clamp(48px, 8.5vw, 116px);
   line-height: 0.98;
   letter-spacing: -0.02em;
   color: var(--text);

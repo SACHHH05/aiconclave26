@@ -1,12 +1,13 @@
 import { Calendar, MapPin, Users } from "lucide-react";
 import kprLogo from "../components/kpr.png";
+import Reveal from "../components/Reveal.jsx";
 import "./Venue.css";
 
 export default function Venue() {
   return (
     <section id="venue" className="venue">
       <div className="container">
-        <div className="venue__top">
+        <Reveal as="div" className="venue__top">
           {/* ---------- Left: KPRIET logo/image ---------- */}
           <div className="venue__media">
             <img
@@ -65,7 +66,7 @@ export default function Venue() {
               </div>
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

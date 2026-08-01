@@ -12,6 +12,7 @@
   margin-bottom: 80px;
 }
 
+
 /* ---------- Left: brand ---------- */
 .footer__brand {
   display: inline-flex;
@@ -123,6 +124,11 @@
   font-size: 12.5px;
   letter-spacing: 0.06em;
   color: var(--muted-2);
+}
+
+.footer__credit-name {
+  color: var(--lime);
+  font-weight: 600;
 }
 
 /* ---------- Back to top ---------- */

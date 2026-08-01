@@ -121,7 +121,7 @@ export default function Navbar() {
           onClick={() => setOpen((o) => !o)}
         >
           {open ? (
-            <X size={24} />
+            <X size={24} /> 
           ) : (
             <Menu size={24} />
           )}

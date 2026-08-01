@@ -7,26 +7,25 @@
 }
 
 :root {
-  /* ---------- Palette: dark, futuristic, cyan -> violet ---------- */
-  --bg: #05060a;
-  --bg-soft: #090b12;
-  --surface: #10131c;
-  --surface-hi: #151927;
-  --line: rgba(255, 255, 255, 0.09);
-  --line-strong: rgba(255, 255, 255, 0.16);
+  --bg: #fdfcfa;
+  --bg-soft: #f6f3ec;
+  --surface: #f2eee5;
+  --surface-hi: #eae4d7;
+  --line: rgba(23, 19, 15, 0.12);
+  --line-strong: rgba(23, 19, 15, 0.22);
 
-  --text: #f3f5fa;
-  --muted: #8d94a8;
-  --muted-2: #5c6273;
+  --text: #17130f;
+  --muted: #58514a;
+  --muted-2: #8a8175;
 
-  --cyan: #22d3ee;
-  --indigo: #6366f1;
-  --violet: #a855f7;
-  --lime: #d4ff5c;
-  --nav-grey: #404040;
+  --cyan: #0891b2;
+  --indigo: #4338ca;
+  --violet: #7c3aed;
+  --lime: #c8102e;
+  --nav-grey: #6b6459;
 
-  --grad: linear-gradient(120deg, #22d3ee 0%, #6366f1 55%, #a855f7 100%);
-  --grad-soft: linear-gradient(120deg, rgba(34, 211, 238, 0.14) 0%, rgba(99, 102, 241, 0.14) 55%, rgba(168, 85, 247, 0.14) 100%);
+  --grad: linear-gradient(120deg, #c8102e 0%, #a10d24 100%);
+  --grad-soft: linear-gradient(120deg, rgba(200, 16, 46, 0.1) 0%, rgba(161, 13, 36, 0.1) 100%);
 
   --radius: 16px;
   --radius-lg: 24px;
@@ -71,22 +70,22 @@ button {
 }
 
 ::selection {
-  background: var(--violet);
+  background: var(--lime);
   color: #fff;
 }
 
 .container {
   width: 100%;
-  max-width: 1480px;
+  max-width: 1720px;
   margin: 0 auto;
-  padding: 0 66px;
+  padding: 0 56px;
 }
 
-@media (max-width: 720px) {
-  .container {
-    padding: 0 20px;
-  }
-}
+@media (max-width: 1600px) {
+   .container {
+     padding: 0 40px;
+   }
+ }
 
 @keyframes bounce-y {
   0%, 100% { transform: translateY(0); opacity: 1; }

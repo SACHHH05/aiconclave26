@@ -1,4 +1,3 @@
-/* src/sections/Jury.css */
 .jury {
   padding: 120px 0;
   background: var(--bg);
@@ -57,6 +56,7 @@
 .jury__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  align-items: start;
   gap: 24px;
 }
 
@@ -67,11 +67,24 @@
   background: var(--bg);
   border: 2px solid var(--line);
   text-align: center;
-  transition: border-color 0.25s ease;
+  transition: border-color 0.35s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease, opacity 0.7s ease;
+  cursor: pointer;
 }
 
-.jury__card:hover {
+/* reveal-in handles opacity only here; transform stays reserved for the hover-scale effect */
+.jury__card.reveal,
+.jury__card.reveal--in {
+  transform: none;
+}
+
+.jury__card:hover,
+.jury__card:focus-visible {
   border-color: var(--lime);
+  transform: scale(1.07);
+  box-shadow: 0 24px 60px rgba(200, 16, 46, 0.16);
+  z-index: 2;
+  outline: none;
 }
 
 .jury__dot {
@@ -96,13 +109,49 @@
   color: var(--lime);
 }
 
+.jury__photo-wrap {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--line);
+  background: var(--surface);
+}
+
+.jury__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
 .jury__card h3 {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 18px;
   line-height: 1.35;
   color: var(--text);
-  margin-bottom: 8px;
+  margin-bottom: 0;
+  transition: margin-bottom 0.35s ease;
+}
+
+.jury__card:hover h3,
+.jury__card:focus-visible h3 {
+  margin-bottom: 12px;
+}
+
+.jury__details {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
+}
+
+.jury__card:hover .jury__details,
+.jury__card:focus-visible .jury__details {
+  max-height: 200px;
+  opacity: 1;
 }
 
 .jury__role {
@@ -119,6 +168,11 @@
   color: var(--muted);
   font-size: 12.5px;
   margin-top: 4px;
+}
+
+.jury__flag {
+  font-size: 14px;
+  margin-right: 6px;
 }
 
 .jury__tag {

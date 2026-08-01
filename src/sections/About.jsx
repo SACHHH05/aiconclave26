@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { OBJECTIVES, STATS } from "../data/content.js";
+import Reveal from "../components/Reveal.jsx";
+import StatCounter from "../components/StatCounter.jsx";
 import "./About.css";
 
 export default function About() {
@@ -29,40 +31,41 @@ export default function About() {
   return (
     <section id="about" className="about">
       <div className="container about__grid">
+        {/* ---------- Left: manifesto ---------- */}
         <div className="about__left">
-          <div className="about__eyebrow">
-            <span className="about__eyebrow-tag">[ 01 ]</span>
-            <span className="about__eyebrow-line" />
-            <span className="about__eyebrow-label">THE MANIFESTO</span>
-          </div>
+          <Reveal>
+            <div className="about__eyebrow">
+              <span className="about__eyebrow-tag">[ 01 ]</span>
+              <span className="about__eyebrow-line" />
+              <span className="about__eyebrow-label">THE MANIFESTO</span>
+            </div>
 
-          <h2 className="about__headline">
-            Where student
-            <span className="about__headline-accent">innovation</span>
-            meets a global
-            <br />
-            jury.
-          </h2>
+            <h2 className="about__headline">
+              Where student
+              <span className="about__headline-accent">innovation</span>
+              meets a global
+              <br />
+              jury.
+            </h2>
 
-          <p className="about__desc">
-            AI Conclave 2026 is a one-day global technical symposium designed
-            to launch student research into the international arena —
-            projects, pitches and posters, all under one roof.
-          </p>
+            <p className="about__desc">
+              AI Conclave 2026 is a one-day global technical symposium designed
+              to launch student research into the international arena —
+              projects, pitches and posters, all under one roof.
+            </p>
+          </Reveal>
 
-          <div className="about__stats">
+          <Reveal delay={150} className="about__stats">
             {STATS.map((s) => (
               <div className="about__stat" key={s.label}>
-                <span className="about__stat-num">
-                  {s.end}
-                  {s.suffix}
-                </span>
+                <StatCounter end={s.end} suffix={s.suffix} className="about__stat-num" />
                 <span className="about__stat-label">{s.label}</span>
               </div>
             ))}
-          </div>
+          </Reveal>
         </div>
 
+        {/* ---------- Right: scroll-driven objectives list ---------- */}
         <div className="about__right">
           {OBJECTIVES.map((o, i) => (
             <div

@@ -1,14 +1,44 @@
+import { useEffect, useRef } from "react";
 import Countdown from "./Countdown.jsx";
 import ScrollIndicator from "./ScrollIndicator.jsx";
 import "./Hero.css";
 
 export default function Hero() {
+  const gridRef = useRef(null);
+  const glow1Ref = useRef(null);
+  const glow2Ref = useRef(null);
+
+  useEffect(() => {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) return;
+
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const y = window.scrollY;
+        if (gridRef.current) gridRef.current.style.transform = `translateY(${y * 0.12}px)`;
+        if (glow1Ref.current) glow1Ref.current.style.transform = `translateY(${y * 0.22}px)`;
+        if (glow2Ref.current) glow2Ref.current.style.transform = `translateY(${y * -0.16}px)`;
+        ticking = false;
+      });
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <section id="home" className="hero">
       <div className="hero__bg" aria-hidden="true">
-        <span className="hero__grid" />
-        <span className="hero__glow hero__glow--1" />
-        <span className="hero__glow hero__glow--2" />
+        <span className="hero__grid" ref={gridRef} />
+        <div className="hero__glow-wrap" ref={glow1Ref}>
+          <span className="hero__glow hero__glow--1" />
+        </div>
+        <div className="hero__glow-wrap" ref={glow2Ref}>
+          <span className="hero__glow hero__glow--2" />
+        </div>
       </div>
 
       <div className="container hero__content">

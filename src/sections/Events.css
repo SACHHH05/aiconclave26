@@ -1,6 +1,6 @@
 .events {
   padding: 120px 0;
-  background: var(--bgx);
+  background: var(--bg);
 }
 
 .events__eyebrow {
@@ -44,11 +44,28 @@
   text-stroke: 2px var(--lime);
 }
 
-/* ---------- Card grid ---------- */
+/* ---------- Card grid: asymmetric wide/narrow, alternating per row ---------- */
 .events__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(5, 1fr);
   gap: 28px;
+}
+
+/* row 1: wide left, narrow right | row 2: narrow left, wide right | repeats every 4 cards */
+.events__card:nth-child(4n + 1) {
+  grid-column: span 3;
+}
+
+.events__card:nth-child(4n + 2) {
+  grid-column: span 2;
+}
+
+.events__card:nth-child(4n + 3) {
+  grid-column: span 2;
+}
+
+.events__card:nth-child(4n + 4) {
+  grid-column: span 3;
 }
 
 .events__card {
@@ -61,7 +78,8 @@
   flex-direction: column;
   cursor: default;
   outline: none;
-  transition: border-color 0.25s ease;
+  transition: border-color 0.25s ease, opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .events__card:hover,
@@ -168,6 +186,12 @@
 @media (max-width: 860px) {
   .events__grid {
     grid-template-columns: 1fr;
+  }
+  .events__card:nth-child(4n + 1),
+  .events__card:nth-child(4n + 2),
+  .events__card:nth-child(4n + 3),
+  .events__card:nth-child(4n + 4) {
+    grid-column: span 1;
   }
   .events__card {
     padding: 30px 26px;

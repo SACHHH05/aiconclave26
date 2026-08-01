@@ -49,6 +49,9 @@ export default function Footer() {
         {/* ---------- Bottom bar ---------- */}
         <div className="footer__bottom">
           <span>&copy; 2026 KPRIET &middot; Dept. of CSE (AIML)</span>
+          <span className="footer__credit">
+          Designed, Developed &amp; Maintained by <span className="footer__credit-name">SACHIIN M</span>
+         </span>
           <span>17 August 2026 &middot; Coimbatore, India</span>
         </div>
       </div>
