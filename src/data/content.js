@@ -5,11 +5,11 @@ import lenkaPhoto from "../components/lenka.jpg";
 
 export const NAV_ITEMS = [
   { id: "about", label: "About" },
+  { id: "posters", label: "Posters" },
   { id: "events", label: "Events" },
   { id: "schedule", label: "Schedule" },
   { id: "jury", label: "Jury" },
   { id: "venue", label: "Venue" },
-  { id: "posters", label: "Posters" },
 ];
 
 export const OBJECTIVES = [

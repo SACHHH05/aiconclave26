@@ -9,7 +9,7 @@ export default function Events() {
       <div className="container">
         <Reveal>
           <div className="events__eyebrow">
-            <span className="events__eyebrow-tag">[ 02 ]</span>
+            <span className="events__eyebrow-tag">[ 03 ]</span>
             <span className="events__eyebrow-line" />
             <span className="events__eyebrow-label">THE PROGRAMME</span>
           </div>

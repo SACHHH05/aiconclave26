@@ -31,9 +31,10 @@
 }
 
 .navbar__inner {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
+  gap: 24px;
   padding-top: 52px;
   padding-bottom: 28px;
   transition: padding 0.3s ease;
@@ -65,6 +66,7 @@
 .navbar__links {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 20px;
 }
 
@@ -83,9 +85,37 @@
   color: var(--lime);
 }
 
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-self: end;
+}
+
+.navbar__register {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  background: #ffffff;
+  text-transform: uppercase;
+  color: var(--text);
+  border: 1px solid var(--line-strong);
+  padding: 16px 30px;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+
+}
+
+.navbar__register:hover {
+  background: var(--lime);
+  border-color: var(--lime);
+  color: #ffffff;
+}
+
 .navbar__burger {
   display: none;
-  margin-left: auto;
   color: var(--text);
 }
 
@@ -93,8 +123,16 @@
   display: none;
 }
 
+.navbar__register--drawer {
+  display: none;
+}
+
 @media (max-width: 860px) {
   .navbar__links {
+    display: none;
+  }
+
+  .navbar__actions .navbar__register {
     display: none;
   }
 
@@ -130,5 +168,13 @@
 
   .navbar__drawer a:hover {
     color: var(--lime);
+  }
+
+  .navbar__register--drawer {
+    display: block;
+    margin: 16px 20px 20px;
+    text-align: center;
+    justify-content: center;
+    border-top: none;
   }
 }

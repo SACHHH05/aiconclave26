@@ -42,30 +42,21 @@ export default function Navbar() {
       }
     );
 
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
+    sections.forEach((section) => observer.observe(section));
 
-    return () => {
-      observer.disconnect();
-    };
+    return () => observer.disconnect();
   }, []);
 
-  // Smooth scroll navigation
+  // Smooth scroll
   const goTo = useCallback(
     (id) => (e) => {
       e.preventDefault();
-
-      // Close mobile menu
       setOpen(false);
 
-      // Scroll to section
-      document
-        .getElementById(id)
-        ?.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
+      document.getElementById(id)?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     },
     []
   );
@@ -73,18 +64,13 @@ export default function Navbar() {
   return (
     <header className={`navbar ${scrolled ? "is-scrolled" : ""}`}>
       <div className="container navbar__inner">
-
-        {/* Logo / Brand */}
+        {/* Logo */}
         <a
           href="#home"
           className="navbar__brand"
           onClick={goTo("home")}
         >
-          <span
-            className="navbar__dot"
-            aria-hidden="true"
-          />
-
+          <span className="navbar__dot" aria-hidden="true" />
           AI CONCLAVE{" "}
           <span className="navbar__brand-accent">
             &apos;26
@@ -101,53 +87,57 @@ export default function Navbar() {
               key={item.id}
               href={`#${item.id}`}
               onClick={goTo(item.id)}
-              className={
-                active === item.id
-                  ? "is-active"
-                  : ""
-              }
+              className={active === item.id ? "is-active" : ""}
             >
               {item.label}
             </a>
           ))}
         </nav>
 
-        {/* Mobile Menu Button */}
-        <button
-          type="button"
-          className="navbar__burger"
-          aria-label="Toggle navigation menu"
-          aria-expanded={open}
-          onClick={() => setOpen((o) => !o)}
-        >
-          {open ? (
-            <X size={24} /> 
-          ) : (
-            <Menu size={24} />
-          )}
-        </button>
+        {/* Right Side */}
+        <div className="navbar__actions">
+          <a
+            href="https://form.jotform.com/262161734503047"
+            className="navbar__register"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Register
+          </a>
+
+          <button
+            type="button"
+            className="navbar__burger"
+            aria-label="Toggle navigation menu"
+            aria-expanded={open}
+            onClick={() => setOpen((prev) => !prev)}
+          >
+            {open ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
-      {/* Mobile Navigation Drawer */}
-      <div
-        className={`navbar__drawer ${
-          open ? "is-open" : ""
-        }`}
-      >
+      {/* Mobile Drawer */}
+      <div className={`navbar__drawer ${open ? "is-open" : ""}`}>
         {NAV_ITEMS.map((item) => (
           <a
             key={item.id}
             href={`#${item.id}`}
             onClick={goTo(item.id)}
-            className={
-              active === item.id
-                ? "is-active"
-                : ""
-            }
+            className={active === item.id ? "is-active" : ""}
           >
             {item.label}
           </a>
         ))}
+
+        <a
+          href="https://form.jotform.com/262161734503047"
+          className="navbar__register navbar__register--drawer"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Register
+        </a>
       </div>
     </header>
   );

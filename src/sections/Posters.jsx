@@ -73,7 +73,7 @@ export default function Posters() {
         {/* ---------- Left: heading ---------- */}
         <Reveal as="div" className="posters__left">
           <div className="posters__eyebrow">
-            <span className="posters__eyebrow-tag">[ 06 ]</span>
+            <span className="posters__eyebrow-tag">[ 02 ]</span>
             <span className="posters__eyebrow-line" />
             <span className="posters__eyebrow-label">SPREAD THE WORD</span>
           </div>

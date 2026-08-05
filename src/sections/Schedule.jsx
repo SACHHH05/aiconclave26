@@ -10,7 +10,7 @@ export default function Schedule() {
         <div className="schedule__left">
           <Reveal>
             <div className="schedule__eyebrow">
-              <span className="schedule__eyebrow-tag">[ 03 ]</span>
+              <span className="schedule__eyebrow-tag">[ 04 ]</span>
               <span className="schedule__eyebrow-line" />
               <span className="schedule__eyebrow-label">ONE DAY</span>
             </div>

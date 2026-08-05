@@ -9,7 +9,7 @@ export default function Jury() {
       <div className="container">
         <Reveal>
           <div className="jury__eyebrow">
-            <span className="jury__eyebrow-tag">[ 04 ]</span>
+            <span className="jury__eyebrow-tag">[ 05 ]</span>
             <span className="jury__eyebrow-line" />
             <span className="jury__eyebrow-label">THE GLOBAL JURY</span>
           </div>

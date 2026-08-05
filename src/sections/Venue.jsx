@@ -31,7 +31,7 @@ export default function Venue() {
           {/* ---------- Right: info ---------- */}
           <div className="venue__info">
             <div className="venue__eyebrow">
-              <span className="venue__eyebrow-tag">[ 05 ]</span>
+              <span className="venue__eyebrow-tag">[ 06 ]</span>
               <span className="venue__eyebrow-line" />
               <span className="venue__eyebrow-label">LOCATION</span>
             </div>
