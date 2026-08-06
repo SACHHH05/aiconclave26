@@ -23,38 +23,26 @@ export default function Events() {
           </h2>
         </Reveal>
 
-        <div className="events__grid">
+        <div className="events__list">
           {EVENTS.map((ev, i) => (
             <Reveal
-              as="div"
-              className="events__card"
-              delay={(i % 2) * 120}
+              as="a" // Changed to an anchor tag or button for better semantic interaction
+              href={`#${ev.title.replace(/\s+/g, '-').toLowerCase()}`} // Dummy link
+              className="events__row"
+              delay={i * 100}
               key={ev.title}
-              tabIndex={0}
             >
-              <div className="events__card-top">
-                <span className="events__kind">
-                  <span className="events__dot" style={{ background: ev.dotColor }} />
-                  {ev.kind}
-                </span>
-                <ArrowUpRight size={20} className="events__arrow" />
+              <div className="events__row-meta">
+                <span className="events__dot" style={{ background: ev.dotColor }} />
+                <span className="events__kind">{ev.kind}</span>
               </div>
 
-              <div className="events__card-body">
-                <h3>{ev.title}</h3>
-                <span className="events__subtitle">{ev.subtitle}</span>
-                <p>{ev.text}</p>
-
-                <div className="events__people">
-                  <span className="events__people-label">{ev.label}</span>
-                  {ev.people.map((p) => (
-                    <div key={p.n} className="events__person">
-                      <strong>{p.n}</strong>
-                      <span>{p.a}</span>
-                    </div>
-                  ))}
-                </div>
+              <div className="events__row-main">
+                <h3 className="events__row-title">{ev.title}</h3>
+                {/* Kept subtitle just in case, but you can delete this if you want strictly titles only */}
+                <span className="events__row-subtitle">{ev.subtitle}</span> 
               </div>
+
             </Reveal>
           ))}
         </div>
