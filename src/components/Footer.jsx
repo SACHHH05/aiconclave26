@@ -26,8 +26,8 @@ export default function Footer() {
               Coimbatore.
             </p>
 
-            <a href="#schedule" className="footer__cta" onClick={scrollToSchedule}>
-              VIEW SCHEDULE
+            <a href="https://form.jotform.com/262161734503047" className="footer__cta" target="_blank" rel="noopener noreferrer">
+              REGISTER
             </a>
           </div>
 
